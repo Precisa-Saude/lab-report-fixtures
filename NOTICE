@@ -1,0 +1,20 @@
+The library code and synthetic fixture content are Copyright 2026 Precisa Saúde,
+distributed under the MIT license. All patients, laboratories and measurements
+are fictional. Printed ranges are test data, not clinical guidance. Adversarial
+cases are not a validated dataset for diagnosis or medical decision-making.
+
+Rendering uses @napi-rs/canvas 0.1.88, Copyright 2020 lynweklm@gmail.com,
+MIT license: https://github.com/Brooooooklyn/canvas/blob/main/LICENSE
+Its native backend includes Skia and third-party components under their own
+permissive licenses: https://skia.googlesource.com/skia/+/main/LICENSE
+No MuPDF, Ghostscript, extraction engine, cloud client or private package is
+part of this library's runtime dependency graph.
+
+Bundled Liberation Sans font files are unmodified. They remain licensed under
+the SIL Open Font License 1.1, with copyright notices and the complete license
+in assets/LICENSE_LIBERATION. They were obtained from pdfjs-dist 5.4.296,
+standard_fonts/. The font names are not relicensed or modified.
+
+LOINC identifiers in fixture metadata name the intended test concepts only.
+They are not a distribution or relicensing of the LOINC terminology database.
+LOINC is a registered trademark of Regenstrief Institute, Inc.

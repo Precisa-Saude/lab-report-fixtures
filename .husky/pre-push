@@ -1,0 +1,4 @@
+set -e
+pnpm install --frozen-lockfile --prefer-offline
+pnpm check
+pnpm test:package

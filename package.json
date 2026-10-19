@@ -1,0 +1,94 @@
+{
+  "name": "@precisa-saude/lab-report-fixtures",
+  "version": "0.1.0",
+  "description": "Seeded synthetic laboratory PDFs in pt-BR and en-US with field geometry and scan variants",
+  "keywords": [
+    "synthetic-data",
+    "lab-report",
+    "pdf",
+    "ocr",
+    "benchmark",
+    "bounding-box",
+    "pt-BR"
+  ],
+  "license": "MIT",
+  "author": "Precisa Saúde",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "lab-report-fixtures": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "assets",
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "README.en.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test:coverage && pnpm build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint src --max-warnings 0",
+    "prepack": "npm run build",
+    "prepare": "husky",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:package": "node scripts/test-package.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "prettier --write",
+      "eslint --fix --max-warnings 0 --no-warn-ignored"
+    ],
+    "*.{json,md,yml}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.88"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "20.3.1",
+    "@precisa-saude/commitlint-config": "1.14.2",
+    "@precisa-saude/eslint-config": "1.14.2",
+    "@precisa-saude/prettier-config": "1.14.2",
+    "@precisa-saude/tsconfig": "1.14.2",
+    "@types/node": "22.20.1",
+    "@vitest/coverage-v8": "4.0.17",
+    "eslint": "9.39.2",
+    "husky": "9.1.7",
+    "lint-staged": "16.2.7",
+    "pdfjs-dist": "5.4.296",
+    "prettier": "3.7.4",
+    "prettier-plugin-packagejson": "3.0.2",
+    "tsup": "8.5.1",
+    "typescript": "6.0.3",
+    "vitest": "4.0.17"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

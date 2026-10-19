@@ -1,0 +1,4 @@
+{
+  "extends": ["config:recommended", ":semanticCommits", "helpers:pinGitHubActionDigests"],
+  "packageRules": [{ "matchUpdateTypes": ["major"], "automerge": false }]
+}
